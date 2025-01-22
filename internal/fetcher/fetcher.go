@@ -1,10 +1,8 @@
 package fetcher
 
-import (
-	"fmt"
-)
+import "fmt"
 
+// FetchMLBData is a stub function for now
 func FetchMLBData(gamePK string) ([]byte, error) {
-	// Example stub. Replace with real logic.
-	return []byte(fmt.Sprintf("Fetched data for game %s", gamePK)), nil
+	return []byte(fmt.Sprintf("Fake fetch data for game %s", gamePK)), nil
 }

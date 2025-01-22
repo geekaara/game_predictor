@@ -1,8 +1,9 @@
 package publisher
 
-import "log"
+import "fmt"
 
+// Publish is a stub function for now
 func Publish(data []byte) error {
-	log.Printf("Publishing data: %s\n", string(data))
+	fmt.Println("Publishing data:", string(data))
 	return nil
 }

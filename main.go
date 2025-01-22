@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 	"os"
-	"time"
 
+	// IMPORTANT: matches your module path above, plus /internal/...
 	"github.com/geekaara/game_predictor/internal/fetcher"
 	"github.com/geekaara/game_predictor/internal/publisher"
 )
@@ -15,10 +15,15 @@ func main() {
 		log.Fatal("GCP_PROJECT_ID not set")
 	}
 
-	// TODO: create PubSub client, ticker, fetch logic, etc.
-	log.Println("Project ID:", projectID)
+	// Just a test: fetch some data, then publish it.
+	data, err := fetcher.FetchMLBData("123456")
+	if err != nil {
+		log.Fatal("error fetching MLB data:", err)
+	}
+	err = publisher.Publish(data)
+	if err != nil {
+		log.Fatal("error publishing data:", err)
+	}
 
-	// This is just an example to verify your code compiles
-	time.Sleep(3 * time.Second)
-	log.Println("Done.")
+	log.Println("All done!")
 }
