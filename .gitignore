@@ -1,0 +1,11 @@
+# Go vendor
+vendor/
+# Go build outputs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+# ...
+# keep your .env or service account files out of repo
+*.json
